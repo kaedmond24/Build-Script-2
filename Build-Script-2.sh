@@ -3,9 +3,12 @@
 ##############################################################################################################################
 # Created by Kevin Edmond.
 #
+# This script is used to initiate and complete a ssh connection to a remote host. There are two options offered upon running 
+# the script, ssh or scp. The ssh option receives user input for remote username and IP address to configure and connect to the 
+# remote host. The scp option receives user input for remote username, IP address, source file path, destination file path, and 
+# direction of connection, local to remote or remote to local. 
 # 
 # 
-#
 # Please read README.md for full notes on script.
 #
 ###############################################################################################################################
@@ -19,12 +22,12 @@ echo " 2: scp"
 read -p "Enter Number: " USER_SELECTION
 
 # Ask user for remote connection username 
-echo "Enter connection username..."
+echo "Enter remote connection username..."
 read -p "Enter Username: " CONN_USERNAME
 
 # Ask user for remote connection IP address
-echo "Enter connection IP Address..."
-read -p "Enter IP Addr: " CONN_IPADDR
+echo "Enter remote connection IP Address..."
+read -p "Enter IP Address: " CONN_IPADDR
 
 # Set remote connection syntax
 REMOTE_CONN="$CONN_USERNAME@$CONN_IPADDR"
@@ -45,7 +48,7 @@ then
         echo "Enter connection direction..."
         echo " local: Remote -> Local"
         echo " remote: Local -> Remote"
-        read CONN_DIRECTION
+        read -p "Connection Direction: " CONN_DIRECTION
         # Get source file path and name
         sleep 1
         echo "Enter source file path and filename (filepath/filename)..."
@@ -54,7 +57,7 @@ then
         sleep 1
         # Get destination file path and name
         echo "Enter destination path and (optional: filename)..."
-        echo -p "Enter file path/filename" DST_FILE
+        echo -p "Enter file path/filename: " DST_FILE
         read DST_FILE
         # Check user file destination input 
         if [[ -z "$DST_FILE" ]]; then
