@@ -17,7 +17,7 @@ Repository for Build Script 2: Initiate and complete an ssh connection or scp fi
 
 1. Prompt the user to select a remote connection option between ssh or scp.
 
-   > `1: ssh`<br> > `2: scp`<br> > `Enter Number: `<br>
+   > `1: ssh`<br> `2: scp`<br> `Enter Number: `<br>
 
 2. Prompt the user to enter the <em>remote host username</em>.
 
@@ -51,7 +51,7 @@ Repository for Build Script 2: Initiate and complete an ssh connection or scp fi
 
      - If local, initiate a remote to local scp connection.
 
-     > `scp <remote host username>@<remote host IP address>:<source file path> <destination path>`
+       > `scp <remote host username>@<remote host IP address>:<source file path> <destination path>`
 
      - If remote, initiate a local to remote scp connection.
        > `scp <source file path> <remote host username>@<remote host IP address>:<destination path>`
